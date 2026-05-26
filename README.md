@@ -1,10 +1,10 @@
-# Abi Cocina 🇻🇪
+# Cocina Abi 🇻🇪
 
-Sitio web sencillo para **Abi Cocina** — la comida casera venezolana de **Abi Norma** en Houston, Katy y alrededores.
+Sitio web sencillo para **Cocina Abi** — la comida casera venezolana de **Abi Norma** en Houston, Katy y alrededores.
 
 Los pedidos llegan directo a su WhatsApp. No hay carrito ni pagos, solo un menú bonito y un botón grande para hacer el pedido.
 
-A small marketing + ordering site for Abi Cocina, a Venezuelan home-catering business run by Abi Norma. Orders open WhatsApp pre-filled with the customer's selections.
+A small marketing + ordering site for Cocina Abi, a Venezuelan home-catering business run by Abi Norma. Orders open WhatsApp pre-filled with the customer's selections.
 
 ---
 
@@ -101,11 +101,39 @@ Eso genera una carpeta llamada **`dist/`**. Arrastra esa carpeta `dist/` a [app.
 
 ### Dominio propio (opcional)
 
-Si más adelante quieren tener un dominio como `abicocina.com`, Netlify lo permite — en el panel hay una opción para "Add custom domain" que te guía paso a paso.
+Si más adelante quieren tener un dominio como `cocinaabi.com`, Netlify lo permite — en el panel hay una opción para "Add custom domain" que te guía paso a paso.
 
 ---
 
-## 5. Necesito ayuda
+## 5. Cómo se ve cuando comparto el link (Open Graph)
+
+Cuando alguien comparte el link de la web en WhatsApp, iMessage, Facebook, etc., se muestra una "tarjeta" con la imagen, el título y la descripción. Esa tarjeta sale del archivo [`public/og-image.jpg`](public/og-image.jpg) y de los `<meta property="og:...">` que están en [`index.html`](index.html).
+
+La URL actual está configurada como **`https://abicocina.netlify.app/`**. Si en el futuro cambias a un dominio propio (ej. `cocinaabi.com`) o a otro subdominio de Netlify, hay que actualizar la URL en `index.html`:
+
+> 1. Abre [`index.html`](index.html).
+> 2. Busca todas las apariciones de `abicocina.netlify.app` (hay 3).
+> 3. Reemplázalas por la URL nueva.
+> 4. Vuelve a hacer `npm run build` y publica de nuevo.
+
+**Para probar el preview** después de publicar:
+- Envíate el link por WhatsApp y mira la tarjeta que aparece (puede tardar 5–10 segundos la primera vez).
+- O usa [opengraph.xyz](https://www.opengraph.xyz) — pegas tu URL y te muestra cómo se verá en distintas redes.
+- Atención: las redes **cachean** las tarjetas agresivamente. Si cambias la imagen, puede que tarde horas o un día en actualizarse en WhatsApp/Facebook. Para forzar refresh en Facebook hay un [debugger oficial](https://developers.facebook.com/tools/debug/).
+
+**Para cambiar la imagen del preview** (la tarjeta):
+- El SVG fuente está en [`scripts/og-image.svg`](scripts/og-image.svg). Edítalo en cualquier editor SVG (Figma, Illustrator, o a mano).
+- Después conviértelo a JPG de 1200×630 y reemplaza `public/og-image.jpg`.
+- En macOS lo puedes hacer rápido con:
+  ```bash
+  qlmanage -t -s 1200 -o /tmp scripts/og-image.svg
+  sips -c 630 1200 /tmp/og-image.svg.png --out /tmp/og.png
+  sips -s format jpeg -s formatOptions 88 /tmp/og.png --out public/og-image.jpg
+  ```
+
+---
+
+## 6. Necesito ayuda
 
 > **TODO:** poner aquí el email o WhatsApp de quien mantiene la web (probablemente tú 🙂).
 > Ejemplo: *Si algo no funciona, escríbele a `tu-correo@ejemplo.com`.*

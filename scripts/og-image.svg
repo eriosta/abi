@@ -1,0 +1,112 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#EAF6FB"/>
+      <stop offset="60%" stop-color="#C9E3EF"/>
+      <stop offset="100%" stop-color="#A8D5E5"/>
+    </radialGradient>
+    <radialGradient id="discBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#FDFBF7"/>
+      <stop offset="55%" stop-color="#EAF6FB"/>
+      <stop offset="100%" stop-color="#B8DCEA"/>
+    </radialGradient>
+    <clipPath id="heartClip2">
+      <path d="M0,-7 C-3,-13 -12,-13 -12,-4 C-12,3 0,13 0,13 C0,13 12,3 12,-4 C12,-13 3,-13 0,-7 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Page background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle decorative dots -->
+  <g fill="#FFFFFF" opacity="0.35">
+    <circle cx="80" cy="80" r="3"/>
+    <circle cx="1120" cy="120" r="3"/>
+    <circle cx="120" cy="560" r="3"/>
+    <circle cx="1100" cy="540" r="3"/>
+    <circle cx="50" cy="320" r="2"/>
+    <circle cx="1150" cy="300" r="2"/>
+  </g>
+
+  <!-- Logo disc on the left -->
+  <g transform="translate(280, 315)">
+    <circle r="220" fill="url(#discBg)"/>
+    <circle r="200" fill="#FDFBF7" opacity="0.32"/>
+    <circle r="208" fill="none" stroke="#FFFFFF" stroke-width="2.4" opacity="0.7"/>
+
+    <!-- Fork -->
+    <g transform="translate(-39, -150) rotate(-6)" fill="#1F618D">
+      <rect x="-8.5"  y="0"   width="3.6" height="22" rx="1.4"/>
+      <rect x="-1.8"  y="0"   width="3.6" height="22" rx="1.4"/>
+      <rect x="4.9"   y="0"   width="3.6" height="22" rx="1.4"/>
+      <rect x="-9.6"  y="20.5" width="19.2" height="7.2" rx="2.4"/>
+      <rect x="-2.4"  y="27.5" width="4.8" height="60" rx="2.4"/>
+    </g>
+
+    <!-- Knife -->
+    <g transform="translate(39, -150) rotate(6)" fill="#1F618D">
+      <path d="M-7.2,0 L7.2,0 L6,57.6 L0,69.6 L-6,57.6 Z"/>
+      <rect x="-3" y="69.6" width="6" height="18" rx="2.4"/>
+    </g>
+
+    <!-- Wordmark -->
+    <text x="0" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="60"
+          font-weight="bold" font-style="italic" text-anchor="middle" fill="#1F618D">
+      Cocina Abi
+    </text>
+
+    <line x1="-62" y1="55" x2="62" y2="55" stroke="#7FB3D5" stroke-width="1.8"/>
+
+    <text x="0" y="83" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14.4"
+          font-weight="600" letter-spacing="4.2" text-anchor="middle" fill="#2874A6">
+      SABORES DE VENEZUELA
+    </text>
+
+    <!-- Venezuelan flag heart -->
+    <g transform="translate(0, 130)">
+      <g clip-path="url(#heartClip2)">
+        <rect x="-15" y="-15" width="30" height="9.5" fill="#FFCD00"/>
+        <rect x="-15" y="-5.5" width="30" height="9" fill="#003893"/>
+        <rect x="-15" y="3.5" width="30" height="11" fill="#CE1126"/>
+      </g>
+      <path d="M0,-7 C-3,-13 -12,-13 -12,-4 C-12,3 0,13 0,13 C0,13 12,3 12,-4 C12,-13 3,-13 0,-7 Z"
+            fill="none" stroke="#1F618D" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <!-- Right column copy -->
+  <g transform="translate(620, 0)">
+    <text x="0" y="220" font-family="Georgia, 'Times New Roman', serif" font-size="74"
+          font-weight="bold" font-style="italic" fill="#1F618D">
+      Cocina Abi
+    </text>
+    <line x1="0" y1="248" x2="120" y2="248" stroke="#7FB3D5" stroke-width="3"/>
+    <text x="0" y="298" font-family="Georgia, 'Times New Roman', serif" font-size="32"
+          font-style="italic" fill="#2874A6">
+      Sabores de Venezuela
+    </text>
+
+    <text x="0" y="370" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22"
+          fill="#1F618D" font-weight="600">
+      Comida casera venezolana
+    </text>
+    <text x="0" y="402" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22"
+          fill="#1F618D" font-weight="600">
+      hecha con amor por Abi Norma.
+    </text>
+
+    <text x="0" y="470" font-family="'Helvetica Neue', Arial, sans-serif" font-size="17"
+          fill="#1F618D" opacity="0.75" letter-spacing="2">
+      HOUSTON · KATY · ALREDEDORES
+    </text>
+
+    <!-- WhatsApp chip -->
+    <g transform="translate(0, 510)">
+      <rect x="0" y="0" width="320" height="56" rx="28" fill="#1F618D"/>
+      <text x="160" y="36" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18"
+            font-weight="800" text-anchor="middle" fill="#FFFFFF" letter-spacing="0.5">
+        Pedidos por WhatsApp o SMS
+      </text>
+    </g>
+  </g>
+</svg>

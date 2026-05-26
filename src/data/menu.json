@@ -1,10 +1,10 @@
 {
   "business": {
-    "name": "Abi Cocina",
+    "name": "Cocina Abi",
     "tagline": "Sabores de Venezuela",
     "cook": "Abi Norma",
     "serviceArea": "Houston · Katy · alrededores",
-    "whatsapp": "18325209075",
+    "whatsapp": "18323587902",
     "phoneInstructions": "Use full international format with no '+', spaces, or dashes. Example: 17135551234 for a Houston number."
   },
   "categories": [
@@ -56,15 +56,15 @@
       "subtitle": "Bandejas de 1 libra",
       "emoji": "🥩",
       "items": [
-        { "id": "carne-molida",           "name": "Carne Molida",                       "nameEn": "Ground Beef",                       "portion": "1 lb", "image": "/images/carne-molida.jpg" },
-        { "id": "carne-mechada",          "name": "Carne Mechada",                      "nameEn": "Shredded Beef",                     "portion": "1 lb", "image": "/images/carne-mechada.jpg" },
-        { "id": "salsa-bologna",          "name": "Salsa Bologna",                      "nameEn": "Bolognese Sauce",                   "portion": "2 lb", "image": "/images/salsa-bologna.jpg" },
-        { "id": "albondigas-carne",       "name": "Albóndigas de Carne",                "nameEn": "Beef Meatballs",                    "portion": "1 lb", "image": "/images/albondigas-carne.jpg" },
-        { "id": "carne-fajitas",          "name": "Carne Salteada Tipo Fajitas",        "nameEn": "Beef Fajitas",                      "portion": "1 lb", "image": "/images/carne-fajitas.jpg" },
-        { "id": "asado-negro",            "name": "Asado Negro / Medio Asado",          "nameEn": "Venezuelan Black Roast",            "portion": "1 lb", "image": "/images/asado-negro.jpg" },
-        { "id": "bistek-tomate-cebolla",  "name": "Bistek Salteado con Tomate y Cebolla", "nameEn": "Steak with Tomato & Onion",       "portion": "1 lb", "image": "/images/bistek-tomate.jpg" },
-        { "id": "carne-guisada-papas",    "name": "Carne Guisada con Papas",            "nameEn": "Stewed Beef with Potatoes",         "portion": "1 lb", "image": "/images/carne-guisada.jpg" },
-        { "id": "bistek-vinagreta",       "name": "Bistek a la Vinagreta y Pimentón",   "nameEn": "Vinaigrette Steak with Bell Pepper","portion": "1 lb", "image": "/images/bistek-vinagreta.jpg" }
+        { "id": "carne-molida",           "name": "Carne Molida",                       "nameEn": "Ground Beef",                       "portion": "1 lb",       "image": "/images/carne-molida.jpg" },
+        { "id": "carne-mechada",          "name": "Carne Mechada",                      "nameEn": "Shredded Beef",                     "portion": "1 lb",       "image": "/images/carne-mechada.jpg" },
+        { "id": "salsa-bologna",          "name": "Salsa Bologna",                      "nameEn": "Bolognese Sauce",                   "portion": "2 lb",       "image": "/images/salsa-bologna.jpg" },
+        { "id": "albondigas-carne",       "name": "Albóndigas de Carne",                "nameEn": "Beef Meatballs",                    "portion": "1 lb",       "image": "/images/albondigas-carne.jpg" },
+        { "id": "carne-fajitas",          "name": "Carne Salteada Tipo Fajitas",        "nameEn": "Beef Fajitas",                      "portion": "1 lb",       "image": "/images/carne-fajitas.jpg" },
+        { "id": "asado-negro",            "name": "Asado Negro / Medio Asado",          "nameEn": "Venezuelan Black Roast",            "portion": "por unidad", "image": "/images/asado-negro.jpg" },
+        { "id": "bistek-tomate-cebolla",  "name": "Bistek Salteado con Tomate y Cebolla", "nameEn": "Steak with Tomato & Onion",       "portion": "1 lb",       "image": "/images/bistek-tomate.jpg" },
+        { "id": "carne-guisada-papas",    "name": "Carne Guisada con Papas",            "nameEn": "Stewed Beef with Potatoes",         "portion": "1 lb",       "image": "/images/carne-guisada.jpg" },
+        { "id": "bistek-vinagreta",       "name": "Bistek a la Vinagreta y Pimentón",   "nameEn": "Vinaigrette Steak with Bell Pepper","portion": "1 lb",       "image": "/images/bistek-vinagreta.jpg" }
       ]
     }
   ]
