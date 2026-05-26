@@ -1,0 +1,370 @@
+# Project Brief: Abi Cocina — Venezuelan Catering Site
+
+> Drop this file (and the accompanying `logo.svg` and `menu.json`) into an empty project folder and tell Claude Code: **"Read PROJECT_BRIEF.md and build the project as specified."**
+
+---
+
+## 1. About the business
+
+**Abi Cocina** is a small, family-run Venezuelan home-catering business run by a single cook — **Abi Norma**, a Venezuelan grandmother working out of her kitchen in the Houston / Katy, TX area. She prepares traditional Venezuelan dishes by the pound (1 lb trays) and arepas by the unit. Orders are coordinated over WhatsApp.
+
+The brand name is **Abi Cocina** ("Abi" = abuela / grandma). The cook's signature, "Por Abi Norma," appears in the logo and on the site so customers who have ordered from her before recognize her name.
+
+## 2. Project goals
+
+Build a **simple, mobile-first marketing + ordering site** that:
+
+1. Presents the menu in an appetizing, well-organized way (categories: Granos, Arepas, Pollo/Pavo/Pescado, Carnes).
+2. Lets a customer **tap items to add them to a "cart"** with quantity controls.
+3. On submit, opens **WhatsApp with a pre-filled order message** to Abi Norma's number.
+4. Looks warm, family-run, Venezuelan-proud — not corporate.
+5. Deploys to **Netlify** for free.
+
+There is **no payment processing, no login, no database**. WhatsApp is the entire order pipeline.
+
+## 3. Tech stack
+
+| Layer        | Choice                                        | Why |
+|--------------|-----------------------------------------------|-----|
+| Build tool   | **Vite**                                      | Fast, zero-config, great Netlify support |
+| Framework    | **React (JavaScript, not TS)**                | Easy for a non-dev grandchild to maintain |
+| Styling      | **Tailwind CSS**                              | Fast theming, mobile-first by default |
+| Icons        | **lucide-react**                              | Clean, light icons |
+| Hosting      | **Netlify**                                   | Free, drag-and-drop or Git deploy |
+| State        | React `useState` / `useReducer` only          | No Redux, no Zustand — keep it dead simple |
+
+```bash
+npm create vite@latest abi-cocina -- --template react
+cd abi-cocina
+npm install
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm install lucide-react
+```
+
+## 4. Design system
+
+Abi Norma's favorite color is **light blue**, so the palette is anchored there with warm cream and Venezuelan flag accents.
+
+### Color tokens (add to `tailwind.config.js` under `theme.extend.colors`)
+
+```js
+colors: {
+  abi: {
+    sky:    '#A8D5E5',  // primary light blue (logo background, buttons)
+    skyDk:  '#7FB3D5',  // hover, borders
+    deep:   '#1F618D',  // headings, text-on-light, primary accent
+    mist:   '#E8F4F9',  // page background washes, cards
+    cream:  '#FDFBF7',  // page background
+    sand:   '#F5EFE6',  // card background alt
+  },
+  ve: {
+    yellow: '#FFCD00',
+    blue:   '#003893',
+    red:    '#CE1126',
+  },
+},
+```
+
+### Typography
+
+Load from Google Fonts in `index.html`:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+```
+
+- **Headings:** `Playfair Display` (italic for brand wordmark, regular for category titles) — warm, editorial, feels like a recipe card.
+- **Body / UI:** `Nunito` — friendly, very legible on phones.
+
+Configure in Tailwind:
+```js
+fontFamily: {
+  serif: ['"Playfair Display"', 'Georgia', 'serif'],
+  sans:  ['Nunito', 'system-ui', 'sans-serif'],
+},
+```
+
+### Tone
+
+- Spanish-first copy (the menu is in Spanish). English subtitles in small text under each dish.
+- Warm, personal voice. Avoid "place your order" / "checkout" — prefer "**Hacer pedido por WhatsApp**" / "Order via WhatsApp".
+- Use the 🇻🇪 flag emoji sparingly (header + WhatsApp message only).
+
+### Visual feel
+
+- Rounded corners everywhere (`rounded-2xl` on cards, `rounded-full` on buttons).
+- Soft shadows (`shadow-sm` / `shadow-md`, never harsh).
+- Generous whitespace, large tap targets (≥ 44px).
+- No bold gradients other than the watercolor in the logo.
+
+## 5. Logo
+
+The proposed logo is included as **`logo.svg`** in this folder. It is a circular light-blue watercolor disc with crossed fork & knife, the "Abi Cocina" wordmark, "SABORES DE VENEZUELA" tagline in small caps, a small Venezuelan-flag heart, and "Por Abi Norma" signed underneath.
+
+- Drop it into `src/assets/logo.svg`.
+- Use it as the header logo (max-height ~80px) and as the favicon (use [realfavicongenerator.net](https://realfavicongenerator.net) or export a 32×32 PNG of the SVG).
+- If the user wants to swap colors later, the file uses these fills: `#7FB3D5`, `#B8DCEA`, `#EAF6FB`, `#1F618D`, `#2874A6`, and the Venezuelan flag triad (`#FFCD00`, `#003893`, `#CE1126`).
+
+## 6. Menu data
+
+The menu lives in **`src/data/menu.json`** — use the file provided alongside this brief. Structure:
+
+```jsonc
+{
+  "business": {
+    "name": "Abi Cocina",
+    "tagline": "Sabores de Venezuela",
+    "cook": "Abi Norma",
+    "serviceArea": "Houston · Katy · alrededores",
+    "whatsapp": "<<<REPLACE_WITH_ABI_NORMA_PHONE_E164>>>"
+  },
+  "categories": [
+    {
+      "id": "granos",
+      "name": "Granos",
+      "nameEn": "Grains",
+      "emoji": "🍚",
+      "items": [
+        { "id": "caraotas-negras", "name": "Caraotas Negras", "nameEn": "Black Beans", "portion": "2 lb", "image": "/images/caraotas-negras.jpg" },
+        ...
+      ]
+    },
+    ...
+  ]
+}
+```
+
+**Important:** the `whatsapp` field currently contains a placeholder. Leave a clearly visible TODO in the README so the grandchild replaces it before deploying. Format: **E.164 without the `+`** (e.g., `17135551234`).
+
+## 7. Page structure
+
+A **single-page site** (no router needed). Sections, top to bottom:
+
+1. **Hero / header**
+   - Logo (large, centered)
+   - Brand wordmark + tagline ("Abi Cocina" / "Sabores de Venezuela")
+   - Short intro sentence in Spanish: *"Comida casera venezolana, hecha con amor por Abi Norma."*
+   - "**Ver menú**" CTA that smooth-scrolls to the menu.
+   - Subtle background: `bg-abi-mist` with a faint repeating heart pattern (optional, very low opacity).
+
+2. **About strip** (one short paragraph)
+   - 2–3 sentences in Spanish about Abi Norma, her family recipes, and her Venezuelan tradition.
+   - Small photo placeholder (round, 200px) — leave a TODO comment for the family to add a real photo of Abi Norma later.
+
+3. **Menu**
+   - One section per category (Granos, Arepas, Pollo/Pavo/Pescado, Carnes).
+   - Category header: emoji + name in Playfair Display, subtitle (e.g., *"Bandejas de 1 libra"*) below in small caps.
+   - **Item card grid** (2 columns on mobile, 3 on tablet, 4 on desktop):
+     - Square image at top (rounded corners, object-cover)
+     - Spanish name (bold)
+     - English name (smaller, italic, abi-deep/60)
+     - Portion size (e.g., "1 lb") as a small pill badge
+     - Quantity stepper: `−  0  +` (only shows + button until count > 0, then shows the full stepper)
+   - When any item has quantity ≥ 1, a **sticky bottom bar** slides up with:
+     - "X artículos en tu pedido" + total item count
+     - Big light-blue "**Hacer pedido por WhatsApp**" button
+
+4. **Footer**
+   - Logo small
+   - "Síguenos" + (placeholder) Instagram / Facebook icons → leave `href="#"` with a TODO
+   - WhatsApp icon → link to `https://wa.me/<phone>` (no pre-filled message, just opens chat)
+   - Service area: "Houston · Katy · alrededores"
+   - Small line: "Cocina por Abi Norma"
+   - © 2026 Abi Cocina
+
+## 8. WhatsApp integration (the only "logic")
+
+When the user taps "Hacer pedido por WhatsApp":
+
+```js
+// src/lib/whatsapp.js
+export function buildWhatsAppUrl(phone, cart, categories) {
+  // Flatten cart items with their info, preserving menu order
+  const lines = [];
+  for (const cat of categories) {
+    const catItems = cat.items
+      .map(item => ({ ...item, qty: cart[item.id] || 0 }))
+      .filter(item => item.qty > 0);
+    if (catItems.length === 0) continue;
+    lines.push(`*${cat.name}*`);
+    for (const item of catItems) {
+      lines.push(`• ${item.qty}× ${item.name} (${item.portion})`);
+    }
+    lines.push(''); // blank line between categories
+  }
+
+  const totalItems = Object.values(cart).reduce((a, b) => a + b, 0);
+
+  const message =
+`¡Hola Abi Norma! 🇻🇪
+
+Me gustaría hacer el siguiente pedido:
+
+${lines.join('\n').trim()}
+
+Total: ${totalItems} ${totalItems === 1 ? 'artículo' : 'artículos'}.
+
+¿Me confirmas disponibilidad y precio total? ¡Gracias!`;
+
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+}
+```
+
+**Behavior on click:**
+- Open the URL with `window.open(url, '_blank', 'noopener,noreferrer')`.
+- Do **not** clear the cart afterward — the user might come back to adjust.
+- On mobile, this opens the WhatsApp app directly. On desktop, WhatsApp Web.
+
+## 9. File / folder structure
+
+```
+abi-cocina/
+├── public/
+│   ├── images/                 # stock photos (see §10)
+│   └── favicon.svg
+├── src/
+│   ├── assets/
+│   │   └── logo.svg
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── About.jsx
+│   │   ├── CategorySection.jsx
+│   │   ├── MenuItemCard.jsx
+│   │   ├── QtyStepper.jsx
+│   │   ├── OrderBar.jsx        # sticky bottom WhatsApp bar
+│   │   └── Footer.jsx
+│   ├── data/
+│   │   └── menu.json
+│   ├── lib/
+│   │   └── whatsapp.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css               # Tailwind directives + base styles
+├── index.html
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.js
+├── netlify.toml
+├── package.json
+└── README.md
+```
+
+## 10. Stock photos
+
+Abi Norma doesn't have professional photos yet, so use **placeholder stock photos** the grandchild can swap later. Two acceptable approaches — **pick one and be consistent**:
+
+### Option A (preferred): curated Unsplash photos committed to `/public/images/`
+
+Download Venezuelan / Latin food photos from Unsplash (free for commercial use, attribution appreciated). Save as the filenames referenced in `menu.json`. Suggested search terms per dish:
+
+| Dish family            | Unsplash search term |
+|------------------------|----------------------|
+| Arepas (any color)     | `arepas venezuelan`, `arepa` |
+| Caraotas negras        | `black beans bowl` |
+| Lentejas               | `lentil stew`, `cooked lentils` |
+| Arroz blanco/amarillo  | `white rice plate`, `yellow rice` |
+| Pollo mechado          | `shredded chicken` |
+| Pollo guisado          | `chicken stew potatoes` |
+| Pollo fajitas          | `chicken fajitas pan` |
+| Albóndigas             | `meatballs in sauce` |
+| Pavo / hamburguesitas  | `turkey burger`, `ground turkey skillet` |
+| Pisillo de pescado     | `shredded fish`, `tilapia flaked` |
+| Carne mechada          | `shredded beef`, `ropa vieja` |
+| Asado negro            | `venezuelan asado negro`, `pot roast dark sauce` |
+| Bistek / salteado      | `steak peppers onions skillet` |
+| Salsa Bologna          | `bolognese sauce pan` |
+
+Save each as a **square crop at ~800×800px** to keep the grid tidy.
+
+### Option B (faster, swap later): use a lightweight placeholder service
+
+Render `<img src={`https://images.weserv.nl/?url=source.unsplash.com/featured/?${searchTerm}&w=600&h=600&fit=cover`}>` — but note this is a runtime dependency on a third-party. **Only do this if Option A is too tedious**, and add a clear TODO in the README to replace with self-hosted images before launch.
+
+**In either case**, every `<img>` tag must include:
+- `alt={item.name}` for accessibility,
+- `loading="lazy"` to keep the page fast,
+- A graceful fallback (`onError` → a light-blue tinted placeholder div with the dish emoji).
+
+## 11. Acceptance criteria
+
+The site is "done" when **all** of these are true:
+
+- [ ] `npm run dev` starts the site with no console errors.
+- [ ] On a phone-sized viewport (375px), the menu is a 2-column grid and the order bar sits above the keyboard / bottom nav.
+- [ ] Tapping the `+` on any item makes the order bar slide up; tapping the WhatsApp button opens `wa.me/<number>` with a message that contains all selected items, grouped by category, with correct quantities and portion sizes.
+- [ ] If no items are selected, the order bar is hidden.
+- [ ] All 25 menu items render with an image (placeholder or real) — none broken.
+- [ ] The page is in Spanish primarily, with English subtitles small and italic.
+- [ ] Lighthouse score on mobile is ≥ 90 in Performance and Accessibility.
+- [ ] No `console.log` left in production code.
+- [ ] `README.md` clearly tells the grandchild **(a) where to put Abi Norma's phone number, (b) how to swap images, and (c) how to edit menu items**.
+
+## 12. Deployment to Netlify
+
+Add a `netlify.toml` at the project root:
+
+```toml
+[build]
+  command  = "npm run build"
+  publish  = "dist"
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+```
+
+Two ways to deploy — explain both in the README:
+
+1. **Drag-and-drop:** run `npm run build`, then drag the `dist/` folder onto [app.netlify.com/drop](https://app.netlify.com/drop). Instant URL.
+2. **Git-connected:** push to GitHub, "Add new site → Import" on Netlify, point at the repo. Auto-deploys on every push.
+
+For a custom domain (e.g., `abicocina.com`), Netlify will walk through DNS — note this in the README as an optional upgrade.
+
+## 13. README content (Claude Code: please generate this verbatim flavor)
+
+The README should be written **for a non-technical grandchild** (not a senior engineer). Sections:
+
+1. **¿Qué es esto?** — one paragraph in plain Spanish + English: this is Abi Norma's catering site.
+2. **Cómo cambiar el número de WhatsApp** — show exactly which file and line.
+3. **Cómo cambiar una foto del menú** — `public/images/`, drop in new file with same name.
+4. **Cómo agregar o quitar un plato** — point at `src/data/menu.json`, give an example.
+5. **Cómo subir cambios** — three commands: `npm install`, `npm run build`, drag `dist/` to Netlify.
+6. **Necesito ayuda** — leave a TODO line for a contact (the grandchild's email/phone).
+
+## 14. Things explicitly out of scope (do NOT build these)
+
+- ❌ User accounts / login
+- ❌ Payment / Stripe / checkout
+- ❌ Backend / API / database
+- ❌ Admin panel
+- ❌ Multi-language toggle (Spanish-primary with English subtitles is enough)
+- ❌ SEO meta-tag bloat (basic `<title>` and `<meta description>` are fine)
+- ❌ Analytics (privacy-preserving option can be added later as a separate task)
+
+## 15. Future enhancements (mention in README, do not implement)
+
+- Add prices once Abi Norma is ready to publish them publicly.
+- Add a "Especial de la semana" banner.
+- Add a real photo gallery of Abi Norma cooking.
+- Add Instagram embed / link.
+- Custom domain (`abicocina.com` or similar).
+
+---
+
+**Build order suggestion for Claude Code:**
+
+1. Scaffold Vite + React + Tailwind, wire up fonts and color tokens.
+2. Drop `logo.svg` and `menu.json` into the right folders.
+3. Build `MenuItemCard` + `QtyStepper` in isolation first (hard-code one item).
+4. Build `CategorySection` that maps over `menu.json`.
+5. Build `OrderBar` with cart state lifted to `App`.
+6. Wire `buildWhatsAppUrl` and test the link in a real browser.
+7. Build `Header`, `About`, `Footer`.
+8. Add placeholder images (Option A above).
+9. Polish responsive layout at 375px / 768px / 1024px.
+10. Write the README.
+11. Add `netlify.toml` and run a production build.
+
+That's it — keep it warm, keep it Venezuelan, keep it simple. 🇻🇪

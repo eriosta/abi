@@ -1,0 +1,71 @@
+{
+  "business": {
+    "name": "Abi Cocina",
+    "tagline": "Sabores de Venezuela",
+    "cook": "Abi Norma",
+    "serviceArea": "Houston · Katy · alrededores",
+    "whatsapp": "<<<REPLACE_WITH_ABI_NORMA_PHONE_E164>>>",
+    "phoneInstructions": "Use full international format with no '+', spaces, or dashes. Example: 17135551234 for a Houston number."
+  },
+  "categories": [
+    {
+      "id": "granos",
+      "name": "Granos",
+      "nameEn": "Grains",
+      "emoji": "🍚",
+      "items": [
+        { "id": "caraotas-negras",   "name": "Caraotas Negras",   "nameEn": "Black Beans",      "portion": "2 lb", "image": "/images/caraotas-negras.jpg" },
+        { "id": "lentejas",          "name": "Lentejas",          "nameEn": "Lentils",          "portion": "2 lb", "image": "/images/lentejas.jpg" },
+        { "id": "arroz-blanco",      "name": "Arroz Blanco",      "nameEn": "White Rice",       "portion": "1 lb", "image": "/images/arroz-blanco.jpg" },
+        { "id": "arroz-amarillo",    "name": "Arroz Amarillo",    "nameEn": "Yellow Rice",      "portion": "1 lb", "image": "/images/arroz-amarillo.jpg" }
+      ]
+    },
+    {
+      "id": "arepas",
+      "name": "Arepas",
+      "nameEn": "Arepas",
+      "emoji": "🤩",
+      "items": [
+        { "id": "arepa-harina-blanca",   "name": "Arepas de Harina Blanca",   "nameEn": "White Flour Arepas",     "portion": "por unidad", "image": "/images/arepa-blanca.jpg" },
+        { "id": "arepa-harina-amarilla", "name": "Arepas de Harina Amarilla", "nameEn": "Yellow Flour Arepas",    "portion": "por unidad", "image": "/images/arepa-amarilla.jpg" },
+        { "id": "arepa-integral",        "name": "Arepas Integrales",         "nameEn": "Whole Wheat Arepas",     "portion": "por unidad", "image": "/images/arepa-integral.jpg" }
+      ]
+    },
+    {
+      "id": "pollo-pavo-pescado",
+      "name": "Pollo, Pavo y Pescado",
+      "nameEn": "Chicken, Turkey & Fish",
+      "subtitle": "Bandejas de 1 libra",
+      "emoji": "🍽️",
+      "items": [
+        { "id": "pollo-mechado",          "name": "Pollo Mechado",                "nameEn": "Shredded Chicken",                  "portion": "1 lb", "image": "/images/pollo-mechado.jpg" },
+        { "id": "pollo-guisado-papas",    "name": "Pollo Guisado con Papas",      "nameEn": "Stewed Chicken with Potatoes",      "portion": "1 lb", "image": "/images/pollo-guisado.jpg" },
+        { "id": "pollo-fajitas",          "name": "Pollo Salteado Tipo Fajitas",  "nameEn": "Chicken Fajitas",                   "portion": "1 lb", "image": "/images/pollo-fajitas.jpg" },
+        { "id": "albondigas-pollo",       "name": "Albóndigas de Pollo",          "nameEn": "Chicken Meatballs",                 "portion": "1 lb", "image": "/images/albondigas-pollo.jpg" },
+        { "id": "pavo-molido",            "name": "Pavo Molido",                  "nameEn": "Ground Turkey",                     "portion": "1 lb", "image": "/images/pavo-molido.jpg" },
+        { "id": "albondigas-pavo",        "name": "Albóndigas de Pavo",           "nameEn": "Turkey Meatballs",                  "portion": "1 lb", "image": "/images/albondigas-pavo.jpg" },
+        { "id": "hamburguesitas-pavo",    "name": "Hamburguesitas de Pavo",       "nameEn": "Turkey Sliders",                    "portion": "1 lb", "image": "/images/hamburguesitas-pavo.jpg" },
+        { "id": "pisillo-tilapia",        "name": "Pisillo de Tilapia",           "nameEn": "Shredded Tilapia",                  "portion": "1 lb", "image": "/images/pisillo-tilapia.jpg" },
+        { "id": "pisillo-atun",           "name": "Pisillo de Atún",              "nameEn": "Shredded Tuna",                     "portion": "1 lb", "image": "/images/pisillo-atun.jpg" }
+      ]
+    },
+    {
+      "id": "carnes",
+      "name": "Carnes",
+      "nameEn": "Beef",
+      "subtitle": "Bandejas de 1 libra",
+      "emoji": "🥩",
+      "items": [
+        { "id": "carne-molida",           "name": "Carne Molida",                       "nameEn": "Ground Beef",                       "portion": "1 lb", "image": "/images/carne-molida.jpg" },
+        { "id": "carne-mechada",          "name": "Carne Mechada",                      "nameEn": "Shredded Beef",                     "portion": "1 lb", "image": "/images/carne-mechada.jpg" },
+        { "id": "salsa-bologna",          "name": "Salsa Bologna",                      "nameEn": "Bolognese Sauce",                   "portion": "2 lb", "image": "/images/salsa-bologna.jpg" },
+        { "id": "albondigas-carne",       "name": "Albóndigas de Carne",                "nameEn": "Beef Meatballs",                    "portion": "1 lb", "image": "/images/albondigas-carne.jpg" },
+        { "id": "carne-fajitas",          "name": "Carne Salteada Tipo Fajitas",        "nameEn": "Beef Fajitas",                      "portion": "1 lb", "image": "/images/carne-fajitas.jpg" },
+        { "id": "asado-negro",            "name": "Asado Negro / Medio Asado",          "nameEn": "Venezuelan Black Roast",            "portion": "1 lb", "image": "/images/asado-negro.jpg" },
+        { "id": "bistek-tomate-cebolla",  "name": "Bistek Salteado con Tomate y Cebolla", "nameEn": "Steak with Tomato & Onion",       "portion": "1 lb", "image": "/images/bistek-tomate.jpg" },
+        { "id": "carne-guisada-papas",    "name": "Carne Guisada con Papas",            "nameEn": "Stewed Beef with Potatoes",         "portion": "1 lb", "image": "/images/carne-guisada.jpg" },
+        { "id": "bistek-vinagreta",       "name": "Bistek a la Vinagreta y Pimentón",   "nameEn": "Vinaigrette Steak with Bell Pepper","portion": "1 lb", "image": "/images/bistek-vinagreta.jpg" }
+      ]
+    }
+  ]
+}

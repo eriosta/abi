@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const z=require\\('zlib'\\); console.log\\('crc32:', typeof z.crc32\\)\")",
+      "Bash(node scripts/fetch-images.mjs)",
+      "Bash(node scripts/retry-images.mjs)"
+    ]
+  }
+}
