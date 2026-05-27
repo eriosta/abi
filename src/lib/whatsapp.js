@@ -1,44 +1,70 @@
-function buildOrderMessage(cart, categories, { bold = true } = {}) {
+export function formatPrice(n) {
+  return Number.isInteger(n) ? `$${n}` : `$${n.toFixed(2)}`;
+}
+
+function buildOrderMessage(cart, notes, categories, { bold = true } = {}) {
   const lines = [];
+  let subtotal = 0;
+  let totalItems = 0;
+
   for (const cat of categories) {
     const catItems = cat.items
-      .map((item) => ({ ...item, qty: cart[item.id] || 0 }))
+      .map((item) => ({ ...item, qty: cart[item.id] || 0, note: (notes?.[item.id] || '').trim() }))
       .filter((item) => item.qty > 0);
     if (catItems.length === 0) continue;
     lines.push(bold ? `*${cat.name}*` : cat.name.toUpperCase());
     for (const item of catItems) {
-      lines.push(`• ${item.qty}× ${item.name} (${item.portion})`);
+      const lineTotal = item.qty * (item.price || 0);
+      subtotal += lineTotal;
+      totalItems += item.qty;
+      lines.push(`• ${item.qty}× ${item.name} (${item.portion})  ${formatPrice(lineTotal)}`);
+      if (item.note) {
+        lines.push(bold ? `   _Nota: ${item.note}_` : `   Nota: ${item.note}`);
+      }
     }
     lines.push('');
   }
 
-  const totalItems = Object.values(cart).reduce((a, b) => a + b, 0);
+  const countLabel = `${totalItems} ${totalItems === 1 ? 'artículo' : 'artículos'}`;
+  const summary = bold
+    ? `*Subtotal: ${formatPrice(subtotal)} · ${countLabel}*`
+    : `Subtotal: ${formatPrice(subtotal)} · ${countLabel}`;
+
   const ask = bold
-    ? '¿Me puedes confirmar el *precio total*, la *disponibilidad* y cuándo lo puedo recoger o recibir? ¡Mil gracias!'
-    : '¿Me puedes confirmar el precio total, la disponibilidad y cuándo lo puedo recoger o recibir? ¡Mil gracias!';
+    ? '¿Me confirmas si está disponible y cuándo lo puedo recoger? ¡Gracias, Abi!'
+    : '¿Me confirmas si está disponible y cuándo lo puedo recoger? ¡Gracias, Abi!';
 
   return `¡Hola Abi Norma!
 
-Me gustaría hacer el siguiente pedido:
+Quisiera pedir esto:
 
 ${lines.join('\n').trim()}
 
-Total: ${totalItems} ${totalItems === 1 ? 'artículo' : 'artículos'}.
+${summary}
 
 ${ask}`;
 }
 
-export function buildWhatsAppUrl(phone, cart, categories) {
-  const msg = buildOrderMessage(cart, categories, { bold: true });
+export function buildWhatsAppUrl(phone, cart, notes, categories) {
+  const msg = buildOrderMessage(cart, notes, categories, { bold: true });
   return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 }
 
-export function buildSmsUrl(phone, cart, categories) {
-  const msg = buildOrderMessage(cart, categories, { bold: false });
-  // `sms:+NUMBER?body=...` works on both iOS and Android.
+export function buildSmsUrl(phone, cart, notes, categories) {
+  const msg = buildOrderMessage(cart, notes, categories, { bold: false });
   return `sms:+${phone}?body=${encodeURIComponent(msg)}`;
 }
 
 export function totalItemsInCart(cart) {
   return Object.values(cart).reduce((a, b) => a + b, 0);
+}
+
+export function totalAmountInCart(cart, categories) {
+  let sum = 0;
+  for (const cat of categories) {
+    for (const item of cat.items) {
+      sum += (cart[item.id] || 0) * (item.price || 0);
+    }
+  }
+  return sum;
 }

@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { useI18n, useT, localized } from '../lib/i18n.jsx';
 
 const STICKY_OFFSET = 64; // px — height of sticky nav + a little breathing room
 
 export default function CategoryNav({ categories, categoryCounts }) {
+  const { lang } = useI18n();
+  const t = useT();
   const [activeId, setActiveId] = useState(categories[0]?.id ?? null);
   const navRef = useRef(null);
   const tabRefs = useRef({});
@@ -56,7 +59,7 @@ export default function CategoryNav({ categories, categoryCounts }) {
   return (
     <nav
       ref={navRef}
-      aria-label="Categorías del menú"
+      aria-label={t('nav.aria')}
       className="sticky top-0 z-30 border-b border-abi-mist bg-abi-cream/95 backdrop-blur supports-[backdrop-filter]:bg-abi-cream/80"
     >
       <div className="scrollbar-none mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3">
@@ -77,13 +80,13 @@ export default function CategoryNav({ categories, categoryCounts }) {
               }`}
             >
               <span aria-hidden="true">{c.emoji}</span>
-              <span>{c.name}</span>
+              <span>{localized(c, 'name', lang)}</span>
               {count > 0 && (
                 <span
                   className={`ml-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full px-1.5 text-[11px] font-extrabold ${
                     isActive ? 'bg-white text-abi-deep' : 'bg-abi-deep text-white'
                   }`}
-                  aria-label={`${count} en tu pedido`}
+                  aria-label={t('nav.countAria', { n: count })}
                 >
                   {count}
                 </span>

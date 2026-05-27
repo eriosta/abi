@@ -1,6 +1,21 @@
 import MenuItemCard from './MenuItemCard.jsx';
+import { useI18n, useT, localized } from '../lib/i18n.jsx';
 
-export default function CategorySection({ category, cart, onIncrement, onDecrement }) {
+export default function CategorySection({
+  category,
+  cart,
+  notes,
+  onIncrement,
+  onDecrement,
+  onOpenDetail,
+}) {
+  const { lang } = useI18n();
+  const t = useT();
+  const name = localized(category, 'name', lang);
+  const subtitle = localized(category, 'subtitle', lang);
+  const altName = lang === 'es' ? category.nameEn : category.name;
+  const dishCount = category.items.length;
+
   return (
     <section
       id={`cat-${category.id}`}
@@ -14,18 +29,18 @@ export default function CategorySection({ category, cart, onIncrement, onDecreme
             className="font-serif text-2xl font-semibold leading-tight text-abi-deep sm:text-3xl"
           >
             <span className="mr-2" aria-hidden="true">{category.emoji}</span>
-            {category.name}
+            {name}
           </h2>
-          {category.subtitle ? (
+          {subtitle ? (
             <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-skyDk">
-              {category.subtitle}
+              {subtitle}
             </p>
           ) : (
-            <p className="mt-0.5 text-xs italic text-abi-deep/50">{category.nameEn}</p>
+            <p className="mt-0.5 text-xs italic text-abi-deep/50">{altName}</p>
           )}
         </div>
         <span className="text-xs font-bold text-abi-deep/40">
-          {category.items.length} {category.items.length === 1 ? 'plato' : 'platos'}
+          {dishCount} {t(`category.dish.${dishCount === 1 ? 'one' : 'other'}`)}
         </span>
       </header>
 
@@ -35,9 +50,11 @@ export default function CategorySection({ category, cart, onIncrement, onDecreme
             key={item.id}
             item={item}
             qty={cart[item.id] || 0}
+            note={notes?.[item.id] || ''}
             categoryEmoji={category.emoji}
             onIncrement={() => onIncrement(item.id)}
             onDecrement={() => onDecrement(item.id)}
+            onOpenDetail={() => onOpenDetail(item.id)}
           />
         ))}
       </div>

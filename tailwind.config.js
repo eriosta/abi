@@ -9,8 +9,11 @@ export default {
           skyDk:  '#7FB3D5',
           deep:   '#1F618D',
           mist:   '#E8F4F9',
-          cream:  '#FDFBF7',
+          cream:  '#FFF6E8',
           sand:   '#F5EFE6',
+          terracotta:   '#B85535',
+          terracottaDk: '#9F4527',
+          peach:        '#F4D5C4',
         },
         ve: {
           yellow: '#FFCD00',

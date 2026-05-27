@@ -1,6 +1,6 @@
 # Cocina Abi 🇻🇪
 
-Sitio web sencillo para **Cocina Abi** — la comida casera venezolana de **Abi Norma** en Houston, Katy y alrededores.
+Sitio web sencillo para **Cocina Abi**, la comida casera venezolana de **Abi Norma** en Houston, Katy y alrededores.
 
 Los pedidos llegan directo a su WhatsApp. No hay carrito ni pagos, solo un menú bonito y un botón grande para hacer el pedido.
 
@@ -80,9 +80,9 @@ Borra su objeto `{ ... }` completo (incluyendo la coma que lo separa del siguien
 
 ## 4. Cómo subir cambios (publicar la web)
 
-La web se publica gratis en [Netlify](https://www.netlify.com). Hay dos formas — usa la que te resulte más fácil.
+La web se publica gratis en [Netlify](https://www.netlify.com). Hay dos formas; usa la que te resulte más fácil.
 
-### Opción A — Arrastrar y soltar (la más fácil)
+### Opción A: arrastrar y soltar (la más fácil)
 
 Desde la terminal, en la carpeta del proyecto:
 
@@ -93,7 +93,7 @@ npm run build
 
 Eso genera una carpeta llamada **`dist/`**. Arrastra esa carpeta `dist/` a [app.netlify.com/drop](https://app.netlify.com/drop). Netlify te da un link al instante.
 
-### Opción B — Conectado a GitHub (se actualiza solo)
+### Opción B: conectado a GitHub (se actualiza solo)
 
 1. Sube el proyecto a un repositorio de GitHub.
 2. En Netlify: **Add new site → Import an existing project** y elige el repo.
@@ -101,7 +101,7 @@ Eso genera una carpeta llamada **`dist/`**. Arrastra esa carpeta `dist/` a [app.
 
 ### Dominio propio (opcional)
 
-Si más adelante quieren tener un dominio como `cocinaabi.com`, Netlify lo permite — en el panel hay una opción para "Add custom domain" que te guía paso a paso.
+Si más adelante quieren tener un dominio como `cocinaabi.com`, Netlify lo permite. En el panel hay una opción para "Add custom domain" que te guía paso a paso.
 
 ---
 
@@ -118,7 +118,7 @@ La URL actual está configurada como **`https://abicocina.netlify.app/`**. Si en
 
 **Para probar el preview** después de publicar:
 - Envíate el link por WhatsApp y mira la tarjeta que aparece (puede tardar 5–10 segundos la primera vez).
-- O usa [opengraph.xyz](https://www.opengraph.xyz) — pegas tu URL y te muestra cómo se verá en distintas redes.
+- O usa [opengraph.xyz](https://www.opengraph.xyz): pegas tu URL y te muestra cómo se verá en distintas redes.
 - Atención: las redes **cachean** las tarjetas agresivamente. Si cambias la imagen, puede que tarde horas o un día en actualizarse en WhatsApp/Facebook. Para forzar refresh en Facebook hay un [debugger oficial](https://developers.facebook.com/tools/debug/).
 
 **Para cambiar la imagen del preview** (la tarjeta):
