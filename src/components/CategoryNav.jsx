@@ -76,7 +76,7 @@ export default function CategoryNav({ categories, categoryCounts }) {
               className={`relative inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold whitespace-nowrap transition ${
                 isActive
                   ? 'bg-abi-deep text-white shadow-card'
-                  : 'bg-white text-abi-deep ring-1 ring-abi-mist hover:ring-abi-skyDk'
+                  : 'bg-white text-abi-ink ring-1 ring-abi-mist hover:ring-abi-deep/40'
               }`}
             >
               <span aria-hidden="true">{c.emoji}</span>
@@ -84,7 +84,7 @@ export default function CategoryNav({ categories, categoryCounts }) {
               {count > 0 && (
                 <span
                   className={`ml-1 inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded-full px-1.5 text-[11px] font-extrabold ${
-                    isActive ? 'bg-white text-abi-deep' : 'bg-abi-deep text-white'
+                    isActive ? 'bg-white text-abi-ink' : 'bg-abi-deep text-white'
                   }`}
                   aria-label={t('nav.countAria', { n: count })}
                 >

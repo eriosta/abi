@@ -33,7 +33,7 @@ export default function MenuItemCard({
     <article
       onClick={onOpenDetail}
       className={`relative flex cursor-pointer items-stretch gap-3 rounded-2xl bg-white p-3 text-left shadow-card ring-1 transition sm:gap-4 sm:p-4 ${
-        inCart ? 'ring-abi-skyDk' : 'ring-abi-mist'
+        inCart ? 'ring-abi-terracotta' : 'ring-abi-mist'
       } hover:-translate-y-0.5 hover:shadow-md`}
       role="button"
       tabIndex={0}
@@ -46,14 +46,14 @@ export default function MenuItemCard({
       aria-label={t('card.viewDetails', { name: displayName })}
     >
       <div className="flex min-w-0 flex-1 flex-col justify-center">
-        <h3 className="font-sans text-[17px] font-bold leading-tight tracking-tight text-abi-deep sm:text-lg">
+        <h3 className="font-sans text-[17px] font-bold leading-tight tracking-tight text-abi-ink sm:text-lg">
           {displayName}
         </h3>
         <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className="text-[17px] font-extrabold tabular-nums text-abi-deep sm:text-lg">
+          <span className="text-[17px] font-extrabold tabular-nums text-abi-ink sm:text-lg">
             {formatPrice(item.price)}
           </span>
-          <span className="inline-flex items-center rounded-full bg-abi-mist px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-abi-deep">
+          <span className="inline-flex items-center rounded-full bg-abi-mist px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-abi-ink">
             {portion}
           </span>
           {hasNote && (
@@ -94,7 +94,7 @@ export default function MenuItemCard({
               type="button"
               onClick={stopAndIncrement}
               aria-label={t('card.add', { name: displayName })}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-abi-deep shadow-card ring-1 ring-abi-mist transition active:scale-95 hover:bg-abi-sky"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-abi-ink shadow-card ring-1 ring-abi-mist transition active:scale-95 hover:bg-abi-sky"
             >
               <Plus className="h-5 w-5" strokeWidth={2.5} />
             </button>

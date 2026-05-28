@@ -5,15 +5,14 @@ export default {
     extend: {
       colors: {
         abi: {
-          sky:    '#A8D5E5',
-          skyDk:  '#7FB3D5',
-          deep:   '#1F618D',
-          mist:   '#E8F4F9',
-          cream:  '#FFF6E8',
-          sand:   '#F5EFE6',
-          terracotta:   '#B85535',
-          terracottaDk: '#9F4527',
-          peach:        '#F4D5C4',
+          sky:    '#A8D5E5',   // light-blue brand band + decorative accent
+          deep:   '#1A4D72',   // brand navy — backgrounds, accents, links
+          ink:    '#0F1B2A',   // primary text (near-black with a navy hint)
+          mist:   '#F0EDE6',   // warm neutral — borders, pills, strips
+          cream:  '#FBF8F1',   // page background
+          terracotta:   '#B85535',   // primary CTA / warm accent
+          terracottaDk: '#9F4527',   // CTA hover
+          peach:        '#F4D5C4',   // soft warm accent (chips)
         },
         ve: {
           yellow: '#FFCD00',

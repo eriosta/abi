@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-abi-cream text-abi-deep font-sans antialiased;
+    @apply bg-abi-cream text-abi-ink font-sans antialiased;
   }
 }
 

@@ -12,7 +12,7 @@ export default function FeaturedCarousel({ items, cart, onIncrement, onOpenDetai
       <div className="mx-auto max-w-3xl lg:max-w-5xl">
         <header className="mb-3 flex items-end justify-between gap-3 px-4">
           <div>
-            <h2 className="flex items-center gap-2 font-serif text-xl font-semibold leading-tight text-abi-deep sm:text-2xl">
+            <h2 className="flex items-center gap-2 font-serif text-xl font-semibold leading-tight text-abi-ink sm:text-2xl">
               <Sparkles className="h-5 w-5 text-abi-terracotta" aria-hidden="true" strokeWidth={2.5} />
               {t('featured.title')}
             </h2>
@@ -59,7 +59,7 @@ function FeaturedCard({ item, qty, onIncrement, onOpenDetail }) {
       }}
       aria-label={t('card.viewDetails', { name: displayName })}
       className={`relative flex w-40 flex-shrink-0 cursor-pointer snap-start flex-col overflow-hidden rounded-2xl bg-white shadow-card ring-1 transition active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-md sm:w-44 ${
-        inCart ? 'ring-abi-skyDk' : 'ring-abi-mist'
+        inCart ? 'ring-abi-terracotta' : 'ring-abi-mist'
       }`}
     >
       <div className="relative aspect-square w-full bg-abi-mist">
@@ -94,20 +94,20 @@ function FeaturedCard({ item, qty, onIncrement, onOpenDetail }) {
             onIncrement();
           }}
           aria-label={t('card.add', { name: displayName })}
-          className="absolute bottom-2 right-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-abi-deep shadow-card ring-1 ring-abi-mist transition active:scale-95 hover:bg-abi-sky"
+          className="absolute bottom-2 right-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-abi-ink shadow-card ring-1 ring-abi-mist transition active:scale-95 hover:bg-abi-sky"
         >
           <Plus className="h-4 w-4" strokeWidth={3} />
         </button>
       </div>
       <div className="flex flex-col gap-0.5 px-2.5 py-2">
-        <h3 className="truncate text-[13px] font-bold leading-tight text-abi-deep">
+        <h3 className="truncate text-[13px] font-bold leading-tight text-abi-ink">
           {displayName}
         </h3>
         <div className="flex items-baseline gap-1.5">
-          <span className="text-sm font-extrabold tabular-nums text-abi-deep">
+          <span className="text-sm font-extrabold tabular-nums text-abi-ink">
             {formatPrice(item.price)}
           </span>
-          <span className="truncate text-[10px] font-bold uppercase tracking-wide text-abi-deep/55">
+          <span className="truncate text-[10px] font-bold uppercase tracking-wide text-abi-ink/55">
             {portion}
           </span>
         </div>

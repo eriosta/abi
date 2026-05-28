@@ -11,6 +11,7 @@
   },
   "featured": [
     "carne-mechada",
+    "pollo-mechado",
     "asado-negro",
     "pollo-guisado-papas",
     "pollo-fajitas"
@@ -24,8 +25,8 @@
       "items": [
         { "id": "caraotas-negras",   "name": "Caraotas Negras",   "nameEn": "Black Beans",  "portion": "2 lb", "portionEn": "2 lb", "price": 15, "image": "/images/caraotas-negras.jpg" },
         { "id": "lentejas",          "name": "Lentejas",          "nameEn": "Lentils",      "portion": "2 lb", "portionEn": "2 lb", "price": 15, "image": "/images/lentejas.jpg" },
-        { "id": "arroz-blanco",      "name": "Arroz Blanco",      "nameEn": "White Rice",   "portion": "1 lb", "portionEn": "1 lb", "price":  7, "image": "/images/arroz-blanco.jpg" },
-        { "id": "arroz-amarillo",    "name": "Arroz Amarillo",    "nameEn": "Yellow Rice",  "portion": "1 lb", "portionEn": "1 lb", "price":  8, "image": "/images/arroz-amarillo.jpg" }
+        { "id": "arroz-blanco",      "name": "Arroz Blanco",      "nameEn": "White Rice",   "portion": "2 lb", "portionEn": "2 lb", "price": 15, "image": "/images/arroz-blanco.jpg" },
+        { "id": "arroz-amarillo",    "name": "Arroz Amarillo",    "nameEn": "Yellow Rice",  "portion": "2 lb", "portionEn": "2 lb", "price": 15, "image": "/images/arroz-amarillo.jpg" }
       ]
     },
     {
@@ -67,7 +68,7 @@
       "subtitleEn": "1 lb trays (except where noted)",
       "emoji": "🥩",
       "items": [
-        { "id": "carne-molida",           "name": "Carne Molida",                         "nameEn": "Ground Beef",                        "portion": "1 lb",                        "portionEn": "1 lb",                        "price":  24, "image": "/images/carne-molida.jpg" },
+        { "id": "carne-molida",           "name": "Carne Molida",                         "nameEn": "Ground Beef",                        "portion": "1 lb",                        "portionEn": "1 lb",                        "price":  23, "image": "/images/carne-molida.jpg" },
         { "id": "carne-mechada",          "name": "Carne Mechada",                        "nameEn": "Shredded Beef",                      "portion": "1 lb",                        "portionEn": "1 lb",                        "price":  25, "image": "/images/carne-mechada.jpg" },
         { "id": "salsa-bologna",          "name": "Salsa Bologna",                        "nameEn": "Bolognese Sauce",                    "portion": "2 lb",                        "portionEn": "2 lb",                        "price":  23, "image": "/images/salsa-bologna.jpg" },
         { "id": "albondigas-carne",       "name": "Albóndigas de Carne",                  "nameEn": "Beef Meatballs",                     "portion": "1 lb",                        "portionEn": "1 lb",                        "price":  25, "image": "/images/albondigas-carne.jpg" },

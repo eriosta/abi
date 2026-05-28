@@ -26,20 +26,20 @@ export default function CategorySection({
         <div>
           <h2
             id={`cat-${category.id}-title`}
-            className="font-serif text-2xl font-semibold leading-tight text-abi-deep sm:text-3xl"
+            className="font-serif text-2xl font-semibold leading-tight text-abi-ink sm:text-3xl"
           >
             <span className="mr-2" aria-hidden="true">{category.emoji}</span>
             {name}
           </h2>
           {subtitle ? (
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-skyDk">
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-ink/55">
               {subtitle}
             </p>
           ) : (
-            <p className="mt-0.5 text-xs italic text-abi-deep/50">{altName}</p>
+            <p className="mt-0.5 text-xs italic text-abi-ink/50">{altName}</p>
           )}
         </div>
-        <span className="text-xs font-bold text-abi-deep/40">
+        <span className="text-xs font-bold text-abi-ink/40">
           {dishCount} {t(`category.dish.${dishCount === 1 ? 'one' : 'other'}`)}
         </span>
       </header>

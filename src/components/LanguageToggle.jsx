@@ -14,7 +14,7 @@ export default function LanguageToggle() {
         onClick={() => setLang('es')}
         aria-pressed={lang === 'es'}
         className={`min-w-[2.25rem] rounded-full px-3 py-1.5 transition ${
-          lang === 'es' ? 'bg-abi-deep text-white' : 'text-abi-deep hover:bg-abi-mist'
+          lang === 'es' ? 'bg-abi-deep text-white' : 'text-abi-ink hover:bg-abi-mist'
         }`}
       >
         ES
@@ -24,7 +24,7 @@ export default function LanguageToggle() {
         onClick={() => setLang('en')}
         aria-pressed={lang === 'en'}
         className={`min-w-[2.25rem] rounded-full px-3 py-1.5 transition ${
-          lang === 'en' ? 'bg-abi-deep text-white' : 'text-abi-deep hover:bg-abi-mist'
+          lang === 'en' ? 'bg-abi-deep text-white' : 'text-abi-ink hover:bg-abi-mist'
         }`}
       >
         EN

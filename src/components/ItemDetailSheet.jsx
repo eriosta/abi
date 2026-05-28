@@ -74,7 +74,7 @@ export default function ItemDetailSheet({
           type="button"
           onClick={onClose}
           aria-label={t('sheet.close')}
-          className="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-abi-deep shadow-card ring-1 ring-abi-mist transition active:scale-95 hover:bg-abi-mist"
+          className="absolute right-3 top-3 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-abi-ink shadow-card ring-1 ring-abi-mist transition active:scale-95 hover:bg-abi-mist"
         >
           <X className="h-5 w-5" strokeWidth={2.5} />
         </button>
@@ -101,16 +101,16 @@ export default function ItemDetailSheet({
           <div className="mt-5">
             <h2
               id="sheet-title"
-              className="font-serif text-2xl font-semibold leading-tight text-abi-deep sm:text-3xl"
+              className="font-serif text-2xl font-semibold leading-tight text-abi-ink sm:text-3xl"
             >
               {displayName}
             </h2>
             <p className="mt-1 text-sm italic text-slate-600">{altName}</p>
             <div className="mt-3 flex flex-wrap items-center gap-2">
-              <span className="font-serif text-2xl font-bold tabular-nums text-abi-deep">
+              <span className="font-serif text-2xl font-bold tabular-nums text-abi-ink">
                 {formatPrice(item.price)}
               </span>
-              <span className="inline-flex items-center rounded-full bg-abi-mist px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-abi-deep">
+              <span className="inline-flex items-center rounded-full bg-abi-mist px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-abi-ink">
                 {portion}
               </span>
             </div>
@@ -119,10 +119,10 @@ export default function ItemDetailSheet({
           <div className="mt-6">
             <label
               htmlFor="item-note"
-              className="block text-xs font-bold uppercase tracking-wider text-abi-skyDk"
+              className="block text-xs font-bold uppercase tracking-wider text-abi-ink/55"
             >
               {t('sheet.notesLabel')}
-              <span className="ml-1 font-semibold tracking-normal text-abi-deep/50 normal-case">
+              <span className="ml-1 font-semibold tracking-normal text-abi-ink/50 normal-case">
                 ({t('sheet.notesOptional')})
               </span>
             </label>
@@ -133,9 +133,9 @@ export default function ItemDetailSheet({
               placeholder={t('sheet.notesPlaceholder')}
               rows={2}
               maxLength={200}
-              className="mt-2 w-full resize-none rounded-xl border border-abi-mist bg-white px-3 py-2 text-base text-abi-deep placeholder:text-abi-deep/40 focus:border-abi-skyDk focus:outline-none focus:ring-2 focus:ring-abi-skyDk/30"
+              className="mt-2 w-full resize-none rounded-xl border border-abi-mist bg-white px-3 py-2 text-base text-abi-ink placeholder:text-abi-ink/40 focus:border-abi-deep focus:outline-none focus:ring-2 focus:ring-abi-deep/30"
             />
-            <p className="mt-1 text-right text-[11px] text-abi-deep/50">{note.length}/200</p>
+            <p className="mt-1 text-right text-[11px] text-abi-ink/50">{note.length}/200</p>
           </div>
 
           <div className="mt-4 flex items-center gap-3">
@@ -145,13 +145,13 @@ export default function ItemDetailSheet({
                 onClick={onDecrement}
                 disabled={qty === 0}
                 aria-label={t('sheet.removeOne')}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-abi-deep shadow-card transition active:scale-95 hover:bg-abi-sky disabled:cursor-not-allowed disabled:opacity-40"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-abi-ink shadow-card transition active:scale-95 hover:bg-abi-sky disabled:cursor-not-allowed disabled:opacity-40"
               >
                 <Minus className="h-5 w-5" strokeWidth={2.5} />
               </button>
               <span
                 aria-live="polite"
-                className="min-w-[2rem] text-center font-serif text-xl font-bold tabular-nums text-abi-deep"
+                className="min-w-[2rem] text-center font-serif text-xl font-bold tabular-nums text-abi-ink"
               >
                 {qty}
               </span>
@@ -159,7 +159,7 @@ export default function ItemDetailSheet({
                 type="button"
                 onClick={onIncrement}
                 aria-label={t('sheet.addOne')}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-abi-deep text-white shadow-card transition active:scale-95 hover:bg-abi-skyDk"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-abi-deep text-white shadow-card transition active:scale-95 hover:bg-abi-ink"
               >
                 <Plus className="h-5 w-5" strokeWidth={2.5} />
               </button>
@@ -167,7 +167,7 @@ export default function ItemDetailSheet({
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-abi-deep px-5 py-3 text-base font-extrabold text-white shadow-card transition active:scale-95 hover:bg-abi-skyDk"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-abi-deep px-5 py-3 text-base font-extrabold text-white shadow-card transition active:scale-95 hover:bg-abi-ink"
             >
               {qty > 0 ? (
                 <span>
