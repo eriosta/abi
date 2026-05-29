@@ -53,7 +53,6 @@
         { "id": "pollo-mechado",          "name": "Pollo Mechado",                "nameEn": "Shredded Chicken",                "portion": "1 lb", "portionEn": "1 lb", "price": 24, "image": "/images/pollo-mechado.jpg" },
         { "id": "pollo-guisado-papas",    "name": "Pollo Guisado con Papas",      "nameEn": "Stewed Chicken with Potatoes",    "portion": "1 lb", "portionEn": "1 lb", "price": 27, "image": "/images/pollo-guisado.jpg" },
         { "id": "pollo-fajitas",          "name": "Pollo Salteado Tipo Fajitas",  "nameEn": "Chicken Fajitas",                 "portion": "1 lb", "portionEn": "1 lb", "price": 26, "image": "/images/pollo-fajitas.jpg" },
-        { "id": "albondigas-pollo",       "name": "Albóndigas de Pollo",          "nameEn": "Chicken Meatballs",               "portion": "1 lb", "portionEn": "1 lb", "price": 25, "image": "/images/albondigas-pollo.jpg" },
         { "id": "pavo-molido",            "name": "Pavo Molido",                  "nameEn": "Ground Turkey",                   "portion": "1 lb", "portionEn": "1 lb", "price": 24, "image": "/images/pavo-molido.jpg" },
         { "id": "albondigas-pavo",        "name": "Albóndigas de Pavo",           "nameEn": "Turkey Meatballs",                "portion": "1 lb", "portionEn": "1 lb", "price": 25, "image": "/images/albondigas-pavo.jpg" },
         { "id": "pisillo-tilapia",        "name": "Pisillo de Tilapia",           "nameEn": "Shredded Tilapia",                "portion": "1 lb", "portionEn": "1 lb", "price": 24, "image": "/images/pisillo-tilapia.jpg" },
