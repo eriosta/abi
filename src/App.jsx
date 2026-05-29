@@ -8,6 +8,7 @@ import OrderBar from './components/OrderBar.jsx';
 import Footer from './components/Footer.jsx';
 import ItemDetailSheet from './components/ItemDetailSheet.jsx';
 import FeaturedCarousel from './components/FeaturedCarousel.jsx';
+import HowToOrder from './components/HowToOrder.jsx';
 import {
   buildWhatsAppUrl,
   buildSmsUrl,
@@ -121,7 +122,7 @@ function AppInner() {
         />
         <CategoryNav categories={categories} categoryCounts={categoryCounts} />
 
-        <div className="mx-auto max-w-3xl px-4 pb-56 pt-6 sm:pt-8 lg:max-w-5xl">
+        <div className="mx-auto max-w-3xl px-4 pt-6 sm:pt-8 lg:max-w-5xl">
           <div className="flex flex-col gap-10 sm:gap-12">
             {categories.map((category) => (
               <CategorySection
@@ -137,6 +138,7 @@ function AppInner() {
           </div>
         </div>
 
+        <HowToOrder />
         <About business={business} />
       </main>
       <Footer business={business} />

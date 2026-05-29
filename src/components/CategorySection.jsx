@@ -32,7 +32,7 @@ export default function CategorySection({
             {name}
           </h2>
           {subtitle ? (
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-ink/55">
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-ocean">
               {subtitle}
             </p>
           ) : (

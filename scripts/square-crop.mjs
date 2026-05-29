@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIR = path.resolve(__dirname, '../public/images');
-const SKIP = new Set(['og-image.jpg', 'abi-norma.png']);
+const SKIP = new Set(['og-image.png', 'abi-norma.png']);
 
 function getDims(file) {
   const out = execSync(`sips -g pixelWidth -g pixelHeight "${file}"`).toString();

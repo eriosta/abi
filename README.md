@@ -107,7 +107,7 @@ Si más adelante quieren tener un dominio como `cocinaabi.com`, Netlify lo permi
 
 ## 5. Cómo se ve cuando comparto el link (Open Graph)
 
-Cuando alguien comparte el link de la web en WhatsApp, iMessage, Facebook, etc., se muestra una "tarjeta" con la imagen, el título y la descripción. Esa tarjeta sale del archivo [`public/og-image.jpg`](public/og-image.jpg) y de los `<meta property="og:...">` que están en [`index.html`](index.html).
+Cuando alguien comparte el link de la web en WhatsApp, iMessage, Facebook, etc., se muestra una "tarjeta" con la imagen, el título y la descripción. Esa tarjeta sale del archivo [`public/og-image.png`](public/og-image.png) (1200×630) y de los `<meta property="og:...">` que están en [`index.html`](index.html).
 
 La URL actual está configurada como **`https://abicocina.netlify.app/`**. Si en el futuro cambias a un dominio propio (ej. `cocinaabi.com`) o a otro subdominio de Netlify, hay que actualizar la URL en `index.html`:
 
@@ -122,14 +122,8 @@ La URL actual está configurada como **`https://abicocina.netlify.app/`**. Si en
 - Atención: las redes **cachean** las tarjetas agresivamente. Si cambias la imagen, puede que tarde horas o un día en actualizarse en WhatsApp/Facebook. Para forzar refresh en Facebook hay un [debugger oficial](https://developers.facebook.com/tools/debug/).
 
 **Para cambiar la imagen del preview** (la tarjeta):
-- El SVG fuente está en [`scripts/og-image.svg`](scripts/og-image.svg). Edítalo en cualquier editor SVG (Figma, Illustrator, o a mano).
-- Después conviértelo a JPG de 1200×630 y reemplaza `public/og-image.jpg`.
-- En macOS lo puedes hacer rápido con:
-  ```bash
-  qlmanage -t -s 1200 -o /tmp scripts/og-image.svg
-  sips -c 630 1200 /tmp/og-image.svg.png --out /tmp/og.png
-  sips -s format jpeg -s formatOptions 88 /tmp/og.png --out public/og-image.jpg
-  ```
+- Lo más fácil: reemplaza el archivo `public/og-image.png` por una imagen nueva de **1200×630** con el mismo nombre.
+- La tarjeta usa el logo (badge completo) más el texto de la derecha; el logo viene de [`src/assets/logo.svg`](src/assets/logo.svg).
 
 ---
 

@@ -119,7 +119,7 @@ export default function ItemDetailSheet({
           <div className="mt-6">
             <label
               htmlFor="item-note"
-              className="block text-xs font-bold uppercase tracking-wider text-abi-ink/55"
+              className="block text-xs font-bold uppercase tracking-wider text-abi-ocean"
             >
               {t('sheet.notesLabel')}
               <span className="ml-1 font-semibold tracking-normal text-abi-ink/50 normal-case">
@@ -159,7 +159,7 @@ export default function ItemDetailSheet({
                 type="button"
                 onClick={onIncrement}
                 aria-label={t('sheet.addOne')}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-abi-deep text-white shadow-card transition active:scale-95 hover:bg-abi-ink"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-abi-deep text-white shadow-card transition active:scale-95 hover:bg-abi-navyDeep"
               >
                 <Plus className="h-5 w-5" strokeWidth={2.5} />
               </button>
@@ -167,7 +167,7 @@ export default function ItemDetailSheet({
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-abi-deep px-5 py-3 text-base font-extrabold text-white shadow-card transition active:scale-95 hover:bg-abi-ink"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-abi-deep px-5 py-3 text-base font-extrabold text-white shadow-card transition active:scale-95 hover:bg-abi-navyDeep"
             >
               {qty > 0 ? (
                 <span>

@@ -19,6 +19,11 @@ const STRINGS = {
     'featured.subtitle': 'Los favoritos de Abi',
     'featured.aria': 'Platos más pedidos',
 
+    'howto.title': 'Cómo pedir',
+    'howto.step1': 'Elige tus platos',
+    'howto.step2': 'Pide por WhatsApp o SMS',
+    'howto.step3': 'Recoge o recibe',
+
     'category.dish.one': 'plato',
     'category.dish.other': 'platos',
 
@@ -73,6 +78,11 @@ const STRINGS = {
     'featured.title': 'Most ordered',
     'featured.subtitle': "Abi's favorites",
     'featured.aria': 'Most ordered dishes',
+
+    'howto.title': 'How to order',
+    'howto.step1': 'Pick your dishes',
+    'howto.step2': 'Order via WhatsApp or SMS',
+    'howto.step3': 'Pick up or delivery',
 
     'category.dish.one': 'dish',
     'category.dish.other': 'dishes',

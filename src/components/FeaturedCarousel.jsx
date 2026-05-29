@@ -13,10 +13,10 @@ export default function FeaturedCarousel({ items, cart, onIncrement, onOpenDetai
         <header className="mb-3 flex items-end justify-between gap-3 px-4">
           <div>
             <h2 className="flex items-center gap-2 font-serif text-xl font-semibold leading-tight text-abi-ink sm:text-2xl">
-              <Sparkles className="h-5 w-5 text-abi-terracotta" aria-hidden="true" strokeWidth={2.5} />
+              <Sparkles className="h-5 w-5 text-abi-gold" aria-hidden="true" strokeWidth={2.5} />
               {t('featured.title')}
             </h2>
-            <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-terracotta">
+            <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-abi-ocean">
               {t('featured.subtitle')}
             </p>
           </div>
@@ -59,7 +59,7 @@ function FeaturedCard({ item, qty, onIncrement, onOpenDetail }) {
       }}
       aria-label={t('card.viewDetails', { name: displayName })}
       className={`relative flex w-40 flex-shrink-0 cursor-pointer snap-start flex-col overflow-hidden rounded-2xl bg-white shadow-card ring-1 transition active:scale-[0.98] hover:-translate-y-0.5 hover:shadow-md sm:w-44 ${
-        inCart ? 'ring-abi-terracotta' : 'ring-abi-mist'
+        inCart ? 'ring-abi-navy' : 'ring-abi-mist'
       }`}
     >
       <div className="relative aspect-square w-full bg-abi-mist">
@@ -82,7 +82,7 @@ function FeaturedCard({ item, qty, onIncrement, onOpenDetail }) {
         {inCart && (
           <span
             aria-hidden="true"
-            className="absolute left-2 top-2 inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-abi-terracotta px-1.5 text-[11px] font-extrabold tabular-nums text-white shadow-card"
+            className="absolute left-2 top-2 inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-abi-navy px-1.5 text-[11px] font-extrabold tabular-nums text-white shadow-card"
           >
             {qty}
           </span>
@@ -107,7 +107,7 @@ function FeaturedCard({ item, qty, onIncrement, onOpenDetail }) {
           <span className="text-sm font-extrabold tabular-nums text-abi-ink">
             {formatPrice(item.price)}
           </span>
-          <span className="truncate text-[10px] font-bold uppercase tracking-wide text-abi-ink/55">
+          <span className="truncate text-[10px] font-bold uppercase tracking-wide text-abi-ocean">
             {portion}
           </span>
         </div>

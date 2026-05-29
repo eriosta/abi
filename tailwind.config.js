@@ -5,28 +5,33 @@ export default {
     extend: {
       colors: {
         abi: {
-          sky:    '#A8D5E5',   // light-blue brand band + decorative accent
-          deep:   '#1A4D72',   // brand navy — backgrounds, accents, links
-          ink:    '#0F1B2A',   // primary text (near-black with a navy hint)
-          mist:   '#F0EDE6',   // warm neutral — borders, pills, strips
-          cream:  '#FBF8F1',   // page background
-          terracotta:   '#B85535',   // primary CTA / warm accent
-          terracottaDk: '#9F4527',   // CTA hover
-          peach:        '#F4D5C4',   // soft warm accent (chips)
+          sky:      '#A8D5E5',   // brand sky — header band, fills (= theme-color)
+          skySoft:  '#CFE6EF',   // light tints, chips
+          navy:     '#15506C',   // primary ink, headings, logo frame, buttons
+          navyDeep: '#0F3E54',   // hover / active / footer
+          ocean:    '#2C7DA0',   // links, secondary text, eyebrows, signature
+          milk:     '#EAF6FB',   // near-white, text on dark
+          gold:     '#CC8E2E',   // warm accent — hairlines, arepa, details
+          whatsapp:     '#25D366',
+          whatsappDeep: '#1EBE5A',
+          whatsappInk:  '#0B3D2E',
+          // Legacy aliases repointed to the new palette (avoids a full class rename):
+          deep:  '#15506C',  // → navy
+          ink:   '#15506C',  // → navy (text)
+          mist:  '#E1EDF3',  // → cool light neutral (borders, pills)
+          cream: '#FFFFFF',  // → white page background
         },
-        ve: {
-          yellow: '#FFCD00',
-          blue:   '#003893',
-          red:    '#CE1126',
-        },
+        ve: { yellow: '#FFCD00', blue: '#0A3D91', red: '#CE1126' },
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans:  ['Nunito', 'system-ui', 'sans-serif'],
+        serif:   ['Fraunces', 'Georgia', 'serif'],          // keep `font-serif` = Fraunces
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans:    ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+        script:  ['Sacramento', 'cursive'],
       },
       boxShadow: {
-        card: '0 2px 10px rgba(31, 97, 141, 0.08)',
-        bar:  '0 -4px 20px rgba(31, 97, 141, 0.12)',
+        card: '0 2px 10px rgba(21, 80, 108, 0.08)',
+        bar:  '0 -4px 20px rgba(21, 80, 108, 0.12)',
       },
     },
   },

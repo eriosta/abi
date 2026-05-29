@@ -33,7 +33,7 @@ export default function MenuItemCard({
     <article
       onClick={onOpenDetail}
       className={`relative flex cursor-pointer items-stretch gap-3 rounded-2xl bg-white p-3 text-left shadow-card ring-1 transition sm:gap-4 sm:p-4 ${
-        inCart ? 'ring-abi-terracotta' : 'ring-abi-mist'
+        inCart ? 'ring-abi-navy' : 'ring-abi-mist'
       } hover:-translate-y-0.5 hover:shadow-md`}
       role="button"
       tabIndex={0}
@@ -58,7 +58,7 @@ export default function MenuItemCard({
           </span>
           {hasNote && (
             <span
-              className="inline-flex items-center gap-1 rounded-full bg-abi-peach px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-abi-terracottaDk"
+              className="inline-flex items-center gap-1 rounded-full bg-abi-skySoft px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-abi-navy"
               title={note}
             >
               <StickyNote className="h-3 w-3" strokeWidth={2.5} />

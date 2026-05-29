@@ -9,10 +9,10 @@ export default function Footer({ business }) {
   const serviceArea = localized(business, 'serviceArea', lang);
 
   return (
-    <footer className="mt-12 border-t border-abi-mist bg-abi-cream pb-56 pt-10 sm:pb-10">
+    <footer className="mt-12 border-t border-abi-mist bg-abi-cream pb-56 pt-10">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 px-4 text-center">
-        <img src={logo} alt="" aria-hidden="true" className="h-20 w-20" />
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-abi-ink/55">
+        <img src={logo} alt="" aria-hidden="true" className="h-32 w-32" />
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-abi-ocean">
           {t('footer.follow')}
         </p>
         <div className="flex items-center gap-3">
@@ -37,7 +37,7 @@ export default function Footer({ business }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t('footer.whatsappAria')}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-abi-deep text-white shadow-card transition hover:bg-abi-ink"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-abi-whatsapp text-abi-whatsappInk shadow-card transition hover:bg-abi-whatsappDeep"
           >
             <MessageCircle className="h-5 w-5" />
           </a>

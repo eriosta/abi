@@ -29,7 +29,7 @@ export default function OrderBar({ totalItems, totalAmount, onOrderWhatsApp, onO
             <div className="flex flex-col gap-2 p-3 sm:gap-3 sm:p-4">
               <div className="flex items-baseline justify-between gap-3">
                 <div className="flex min-w-0 flex-col leading-tight">
-                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-abi-ink/55">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-abi-ocean">
                     {t('order.subtotal')}
                   </span>
                   <span className="font-serif text-2xl font-bold leading-none tabular-nums text-abi-ink sm:text-3xl">
@@ -44,7 +44,7 @@ export default function OrderBar({ totalItems, totalAmount, onOrderWhatsApp, onO
               <button
                 type="button"
                 onClick={onOrderWhatsApp}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-abi-terracotta px-5 py-3.5 text-base font-extrabold text-white shadow-card transition active:scale-[0.99] hover:bg-abi-terracottaDk"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-abi-whatsapp px-5 py-3.5 text-base font-extrabold text-abi-whatsappInk shadow-card transition active:scale-[0.99] hover:bg-abi-whatsappDeep"
               >
                 <MessageCircle className="h-5 w-5" strokeWidth={2.5} />
                 <span>{t('order.whatsapp')}</span>
