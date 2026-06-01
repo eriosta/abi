@@ -61,7 +61,7 @@ export default function OrderBar({
                   autoComplete="name"
                   required
                   aria-required="true"
-                  className="w-full rounded-xl border border-abi-mist bg-white px-3 py-1.5 text-sm font-semibold text-abi-ink placeholder:font-normal placeholder:text-abi-ink/40 focus:border-abi-ocean focus:outline-none focus:ring-2 focus:ring-abi-ocean/20"
+                  className="w-full rounded-xl border border-abi-mist bg-white px-3 py-1.5 text-base font-semibold text-abi-ink placeholder:font-normal placeholder:text-abi-ink/40 focus:border-abi-ocean focus:outline-none focus:ring-2 focus:ring-abi-ocean/20 sm:text-sm"
                 />
               </label>
 
