@@ -50,6 +50,7 @@ function AppInner() {
   const t = useT();
   const [cart, dispatch] = useReducer(cartReducer, {});
   const [notes, setNotes] = useState({});
+  const [customerName, setCustomerName] = useState('');
   const [detailItemId, setDetailItemId] = useState(null);
 
   const { business, categories } = menu;
@@ -88,14 +89,14 @@ function AppInner() {
   };
 
   const handleOrderWhatsApp = () => {
-    if (totalItems === 0 || !phoneIsConfigured()) return;
-    const url = buildWhatsAppUrl(business.whatsapp, cart, notes, categories);
+    if (totalItems === 0 || !customerName.trim() || !phoneIsConfigured()) return;
+    const url = buildWhatsAppUrl(business.whatsapp, cart, notes, categories, customerName);
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const handleOrderSms = () => {
-    if (totalItems === 0 || !phoneIsConfigured()) return;
-    const url = buildSmsUrl(business.whatsapp, cart, notes, categories);
+    if (totalItems === 0 || !customerName.trim() || !phoneIsConfigured()) return;
+    const url = buildSmsUrl(business.whatsapp, cart, notes, categories, customerName);
     window.location.href = url;
   };
 
@@ -146,6 +147,8 @@ function AppInner() {
       <OrderBar
         totalItems={totalItems}
         totalAmount={totalAmount}
+        customerName={customerName}
+        onCustomerNameChange={setCustomerName}
         onOrderWhatsApp={handleOrderWhatsApp}
         onOrderSms={handleOrderSms}
       />
